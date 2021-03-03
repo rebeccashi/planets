@@ -28,14 +28,14 @@ body {
         transform: scale(1) translateY(0px);
     }
     20% {
-        transform: scale(0.8) translateY(-80px);
-    }
-    40% {
-        transform: scale(0.6) translateY(-150px);
+        transform: scale(0.8) translateY(-90px);
     }
     100% {
-        transform: scale(0.45) translateY(-200px);
+        transform: scale(0.5) translateY(-190px);
     }
+/*    100% {
+        transform: scale(0.45) translateY(-200px);
+    }*/
 }
 
 .galaxy {
@@ -55,6 +55,18 @@ body {
     transform: rotateX(-90deg);
 }
 
+@keyframes planet-rotate{
+    0%: {
+        transform: rotateX(0deg);
+    }
+    50%: {
+        transform: rotateX(180deg);
+    }
+    100%: {
+        transform: rotateX(360deg);
+    }
+}
+
 .mercury-orbit {
     position: absolute;
     width: 900px;
@@ -69,11 +81,18 @@ body {
     border: 1px solid black;
 }
 
+/* TODO: change sun to larger size!!!! ; */
 .circle-sun {
     background: #cc2204;
     background: radial-gradient(circle at 100px 100px, #cc2204, #000);
     width: 300px;
     height: 300px;
+
+/*    
+doesn't work
+    animation: planet-rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;*/
 }
 
 .mercury {
@@ -93,6 +112,19 @@ body {
     height: 40px;
 }
 
+.venus {
+    /*clip-path: circle(200px);*/
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: auto auto;
+    z-index: 0;
+    transform: rotateX(-90deg) translateX(100px) translateZ(390px) translateY(100px);
+    animation: planet-rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
 .venus-orbit {
     position: absolute;
     width: 1500px;
@@ -101,6 +133,13 @@ body {
     z-index: 0;
     border-radius: 50%;
     transform: rotateX(-3.5deg) translateX(-620px) translateY(-1100px) translateZ(-150px);
+}
+
+.circle-venus {
+    background: rgb(228,188,103);
+    background: radial-gradient(circle at 20px 20px, rgb(228,188,103), #59410d);
+    width: 50px;
+    height: 50px;
 }
 
 
