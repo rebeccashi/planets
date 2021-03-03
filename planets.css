@@ -15,8 +15,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    perspective: 600px; 
-    /*perspective-origin: center top;*/
+    perspective: 500px; 
+    perspective-origin: center;
     animation-name: zoom;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -25,30 +25,28 @@ body {
 
 @keyframes zoom {
     0% {
-        /*transform: translateZ(0px);*/
-        transform: scale(1);
+        transform: scale(1) translateY(0px);
     }
     100% {
-        /*transform: translateZ(-500px);*/
-        transform: scale(0.5);
+        transform: scale(0.6) translateY(0px);
     }
 }
 
 .galaxy {
     position: relative;
-    transform: rotateX(75deg) translateX(-100px);
+    transform: rotateX(90deg) translateX(-100px);
     transform-style: preserve-3d;
 }
 
 .sun {
     /*clip-path: circle(200px);*/
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     margin: auto auto;
     z-index: 0;
     overflow: visible;
-    transform: rotateX(-75deg);
+    transform: rotateX(-90deg);
 }
 
 .mercury-orbit {
@@ -58,22 +56,42 @@ body {
     border: 1px solid rgba(255,255,255,0.8);
     z-index: 0;
     border-radius: 50%;
-    transform: translateX(-340px) translateY(-400px) translateZ(90px);
+    transform: rotateX(-7deg) translateX(-320px) translateY(-500px) translateZ(-80px);
 }
 
 .border {
     border: 1px solid black;
 }
 
-.circleX {
-    width: 200px;
-    height: 200px;
-    /*background: yellow;*/
-    /*background: radial-gradient(circle at 100px 100px, yellow, #000);*/
-    position: absolute;
-    border-radius: 50%;
+.circle-sun {
     background: #cc2204;
     background: radial-gradient(circle at 100px 100px, #cc2204, #000);
+    width: 300px;
+    height: 300px;
+}
+
+.mercury {
+    /*clip-path: circle(200px);*/
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin: auto auto;
+    z-index: 0;
+    overflow: visible;
+    transform: rotateX(-90deg) translateZ(250px) translateY(-100px);
+}
+
+.circle-mercury {
+    background: rgb(144,140,145);
+    background: radial-gradient(circle at 100px 100px, rgb(144,140,145), #000);
+    width: 200px;
+    height: 200px;
+}
+
+
+.circleX {
+    position: absolute;
+    border-radius: 50%;
 }
 
 .circleX:nth-child(1) {
@@ -94,14 +112,8 @@ body {
 }
 
 .circleY {
-    width: 200px;
-    height: 200px;
     position: absolute;
     border-radius: 50%;
-    /*background: radial-gradient(circle at 100px 100px, yellow, #000);
-    background: yellow;*/
-    background: #cc2204;
-    background: radial-gradient(circle at 100px 100px, #cc2204, #000);
 }
 
 .circleY:nth-child(1) {
@@ -122,14 +134,8 @@ body {
 }
 
 .circleZ {
-    width: 200px;
-    height: 200px;
-    /*background: yellow;*/
     position: absolute;
     border-radius: 50%;
-    /*background: radial-gradient(80% 80%, yellow, rgb(95, 76, 1));*/
-    background: #cc2204;
-    background: radial-gradient(circle at 100px 100px, #cc2204, #000);
 }
 
 .circleZ:nth-child(1) {
