@@ -19,24 +19,6 @@ body {
     /*perspective-origin: center top;*/
 }
 
-.sun {
-    display: block;
-    background: black;
-    background: radial-gradient(circle at 100px 100px, #cc2204, #000);
-    /* background: #cc2204; */
-    border-radius: 50%;
-    height: 300px;
-    width: 300px;
-    margin: 0;
-    position: relative;
-    transform-style: preserve-3d;
-    /* color: red; */
-}
-
-.sun:hover {
-    transform: rotateX(30deg);
-}
-
 @keyframes zoom {
     0% {
         transform: translateZ(0px);
