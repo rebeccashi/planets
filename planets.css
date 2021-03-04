@@ -3,7 +3,7 @@ body {
     padding: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /*justify-content: center;*/
     background: rgb(16, 18, 43);
 }
 
@@ -16,11 +16,12 @@ body {
     align-items: center;
     justify-content: center;
     perspective: 500px; 
-    /*perspective-origin: top;*/
     animation-name: zoom;
     animation-duration: 5s;
     animation-fill-mode: forwards;
     animation-delay: 1s;
+    margin-top: -20px;
+    /*perspective-origin: center top;*/
 }
 
 @keyframes zoom {
@@ -30,12 +31,12 @@ body {
     20% {
         transform: scale(0.8) translateY(-90px);
     }
-    100% {
+    40% {
         transform: scale(0.5) translateY(-190px);
     }
-/*    100% {
-        transform: scale(0.45) translateY(-200px);
-    }*/
+    100% {
+        transform: scale(0.35) translateY(-160px);
+    }
 }
 
 .galaxy {
@@ -47,34 +48,25 @@ body {
 .sun {
     /*clip-path: circle(200px);*/
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     margin: auto auto;
     z-index: 0;
     overflow: visible;
     transform: rotateX(-90deg);
+    border-radius: 50%;
 }
 
 @keyframes planet-rotate{
-    0%: {
-        transform: rotateX(0deg);
-    }
-    50%: {
-        transform: rotateX(180deg);
-    }
-    100%: {
-        transform: rotateX(360deg);
-    }
+    0%: { transform: rotateZ(0deg);}
+    50%: { transform: rotateZ(180deg);}
+    100%: { transform: rotateZ(360deg);}
 }
 
-.mercury-orbit {
-    position: absolute;
-    width: 900px;
-    height: 900px;
-    border: 1px solid rgba(255,255,255,0.8);
-    z-index: 0;
-    border-radius: 50%;
-    transform: rotateX(-7deg) translateX(-320px) translateY(-500px) translateZ(-80px);
+@keyframes orbit {
+  0%   { transform: rotateZ(0deg); }
+  50% { transform: rotateZ(180deg); } 
+  /*100% { transform: rotateX(360deg); } */
 }
 
 .border {
@@ -84,45 +76,58 @@ body {
 /* TODO: change sun to larger size!!!! ; */
 .circle-sun {
     background: #cc2204;
-    background: radial-gradient(circle at 100px 100px, #cc2204, #000);
-    width: 300px;
-    height: 300px;
+    background: radial-gradient(circle at 100px 100px, #f5620c, #cc2204, #000);
+/*    background-image: url('sun.jpg');
+    background-size: cover;*/
+    width: 350px;
+    height: 350px;
+}
 
-/*    
-doesn't work
-    animation: planet-rotate;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;*/
+.mercury-orbit {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    border: 1px solid white;
+    z-index: 0;
+    border-radius: 50%;
+    transform: rotateX(-7deg) translateX(-320px) translateY(-500px) translateZ(-80px);
 }
 
 .mercury {
-    /*clip-path: circle(200px);*/
     position: absolute;
     width: 40px;
     height: 40px;
     margin: auto auto;
     z-index: 0;
-    transform: rotateX(-90deg) translateZ(380px) translateY(50px);
+    transform: rotateX(-90deg) translateZ(380px) translateY(50px); 
+}
+
+@keyframes mercury-rotate{
+    0%: {
+        transform: rotateX(-90deg) translateZ(380px) translateY(50px) rotateZ(0deg);
+    }
+    50%: {
+        transform: rotateX(-90deg) translateZ(380px) translateY(50px) rotateZ(180deg);
+    }
+    100%: {
+        transform: rotateX(-90deg) translateZ(380px) translateY(50px) rotateZ(360deg);
+    }
 }
 
 .circle-mercury {
     background: rgb(144,140,145);
-    background: radial-gradient(circle at 20px 20px, rgb(144,140,145), #000);
+    background: radial-gradient(circle at 12px 12px, #c4c0c4 10%, rgb(144,140,145) 25%, #000);
     width: 40px;
     height: 40px;
 }
 
 .venus {
-    /*clip-path: circle(200px);*/
     position: absolute;
     width: 50px;
     height: 50px;
     margin: auto auto;
     z-index: 0;
     transform: rotateX(-90deg) translateX(100px) translateZ(390px) translateY(100px);
-    animation: planet-rotate;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
 }
 
 .venus-orbit {
@@ -142,6 +147,31 @@ doesn't work
     height: 50px;
 }
 
+.earth {
+    position: absolute;
+    width: 78px;
+    height: 78px;
+    margin: auto auto;
+    z-index: 2;
+    transform: rotateX(-90deg) translateZ(397px) translateX(190px) translateY(80px);
+}
+
+.earth-orbit {
+    position: absolute;
+    width: 2050px;
+    height: 2050px;
+    border: 0.8px solid rgba(255,255,255,0.8);
+    z-index: 0;
+    border-radius: 50%;
+    transform: translateX(-920px) translateY(-1612px) translateZ(-80px);
+}
+
+.circle-earth {
+    /*background: rgb(65,146,41);*/
+    background: radial-gradient(circle at 10px 10px, #018c5e 20%, blue 60%, #051e47 100%);
+    width: 78px;
+    height: 78px;
+}
 
 .circleX {
     position: absolute;
