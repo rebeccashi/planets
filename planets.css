@@ -17,10 +17,9 @@ body {
     justify-content: center;
     perspective: 500px; 
     animation-name: zoom;
-    animation-duration: 5s;
+    animation-duration: 10s;
     animation-fill-mode: forwards;
     animation-delay: 1s;
-    margin-top: -20px;
     /*perspective-origin: center top;*/
 }
 
@@ -28,14 +27,20 @@ body {
     0% {
         transform: scale(1) translateY(0px);
     }
-    20% {
+    25% {
         transform: scale(0.8) translateY(-90px);
     }
-    40% {
-        transform: scale(0.5) translateY(-190px);
+    38% {
+        transform: scale(0.8) translateY(-90px);
+    }
+    65% {
+        transform: scale(0.6) translateY(-190px);
+    }
+    70% {
+        transform: scale(0.6) translateY(-190px);
     }
     100% {
-        transform: scale(0.35) translateY(-160px);
+        transform: scale(0.35) translateY(-180px);
     }
 }
 
